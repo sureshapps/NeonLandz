@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title> Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/alphardex/aqua.css/dist/aqua.min.css'>
+<link href="https://fonts.cdnfonts.com/css/prettier-script" rel="stylesheet">
+                
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden
+        }
+    </style>
+ 
+
+
+
+ 
+
+<link href="https://fonts.cdnfonts.com/css/lt-binary-neue" rel="stylesheet">
+                
+                
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                
+  <style>
+      :root {
+      --red: #E50914;
+      --blue: #0D47A1;
+      --yellow: #FFD700;
+      --dark: #121212;
+
+    }
+
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap);
+
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+
+    }
+
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5px;
+  background: url('myks.png') no-repeat center/cover;
+
+  border: 0.1rem solid #2323ff;
+  border-radius: 0.1rem;
+  box-shadow: 0 0 .0rem #2323ff,
+              0 0 .0rem #2323ff,
+              0 0 0rem #2323ff,
+              0 0 0.0rem #2323ff,
+              0 0 0rem #ff13f0,
+              inset 0 0 11.3rem #2323ff; 
+  animation: thunderFlash 2s infinite;
+
+  animation: flicker 10s linear infinite;
+  position: relative; /* 👈 add this */
+}
+
+
+.thunder {
+  animation: thunderFlash 1.5s infinite;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+
+
+
+
+.thunder {
+  animation: thunderFlash 2.5s infinite;
+}
+
+@keyframes thunderFlash {
+  0%   { opacity: 1; }
+  10%  { opacity: 1; }
+  15%  { opacity: 1; }
+  20%  { opacity: 0.8; }
+  22%  { opacity: 1; }
+  25%  { opacity: 0.9; } 
+   27% { opacity: 1; }
+28% { opacity: 1; }
+37% { opacity: 1; }
+50% { opacity: 1; }
+51% { opacity: 0.6; }
+52% { opacity: 1; }
+60% { opacity: 1; }
+  100% { opacity: 1; }
+}
+.myneonks{
+
+    justify-content: center;
+	
+  animation: flicker 1s linear infinite;
+
+}
+
+
+#myneon{
+
+    width: 100%;
+
+
+    background-color: transparent;
+	
+    will-change: filter, color;
+  filter: saturate(60%);
+    text-shadow: 0px 0px 50px #0072ff,
+                 0px 0px 100px #0072ff,
+                 0px 0px 150px #0072ff,
+                 0px 0px 200px #0072ff;
+
+    animation: animate 3s linear infinite;
+animation: float 6s ease-in-out infinite;
+
+}
+
+
+@keyframes animate{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(360deg);
+  }
+}
+
+@keyframes float {
+	0% {
+
+		transform: translatey(0px);
+	}
+	50% {
+
+
+		transform: translatey(-20px);
+	}
+	100% {
+
+
+		transform: translatey(0px);
+	}
+}
+
+
+#rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+#rain canvas {
+  margin: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+
+
+
+
+.loading span {
+  animation: blur 1.5s calc(var(--i) / 5 * 1s) alternate infinite;
+}
+
+@keyframes blur {
+  to {
+    filter: blur(5px);
+  }
+}
+
+
+
+.absolute {
+  position: absolute;
+}
+
+.hv-center {
+  top: 90%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.load {
+ font-size:20px;
+    width: 100%;
+
+letter-spacing: 5px;
+
+color: white;
+                                                                    
+font-family: 'LT Binary Neue', sans-serif;
+                                                                    font-family: 'LT Binary Neue Round', sans-serif;
+
+                                                
+                                                
+}
+
+
+.absolute2 {
+  position: absolute;
+    width: 100%;
+}
+
+.hv-center2 {
+  top: 93%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.load2 {
+ font-size:20px;
+color: white;
+letter-spacing: 5px;
+    width: 100%;
+                                                                    
+font-family: 'LT Binary Neue', sans-serif;
+                                                                    font-family: 'LT Binary Neue Round', sans-serif;
+                                                
+                                                
+}
+
+
+
+
+@keyframes slideyThing {
+  from {background-position:-700px}
+  to {background-position:700px}
+}
+
+
+
+
+
+    /* Center unlock bar */
+    .unlock {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 69%;
+      max-width: 400px;
+
+    }
+
+    #sliderTrack {
+      width: 100%;
+      height: 50px;
+
+      background: rgba(255, 255, 255, 0.05);
+
+border: 1px solid white;
+	border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+	backdrop-filter: blur(15px);
+
+    }
+
+    #sliderBtn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+   position: absolute;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+
+background: #fee800;
+	box-shadow: 0 0 5px #fee800, 0 0 15px #fee800, 0 0 30px #fee800,
+		0 0 60px #fee800;
+      transition: left 0.2s ease;
+      touch-action: none; /* important for mobile swipe */
+    }
+
+    #sliderText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+transform: translate(-50%,-50%);
+      color: #fee800;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+
+      pointer-events: none;
+      white-space: nowrap;
+    }		
+
+@keyframes neonGlow {
+  from {
+    box-shadow: 0px 0px 53px #fee800;
+  }
+  
+  to {
+    box-shadow: 0px 0px 75px #fee800,
+      0px 0px 55px 0.3 #fee800,
+      0px 0px 60px 0.3 #fee800;
+  }
+}
+
+
+.clock-container {
+  position: absolute;   /* floating inside hero */
+  bottom: 430px;       
+    right: 20px;
+  text-align: left;
+  z-index: 999;         /* stays above everything */
+cursor: grab;  /* show draggable hand */
+
+
+  background: rgba(0, 0, 0, 0.2); /* subtle glass effect */
+  padding: 5px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+user-select: none; /* prevent text selection while dragging */
+}
+.clock-container:active {
+  cursor: grabbing;
+}
+
+.clock .time {
+  font-size: 0.8rem;
+  font-family: 'LT Binary Neue', sans-serif;
+  text-shadow: 0 0 6px #00f, 0 0 12px #0ff;
+
+}
+
+.clock .date {
+  font-size: 0.5rem;
+  color: #ddd;
+margin-bottom: -10px; 
+}
+
+
+#soundBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+         	
+    padding: 5px 8px;
+color: #fff;
+    background-color: transparent;
+    border: 0px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+
+#soundBtn:hover {
+color: yellow;
+	backdrop-filter: blur(15px);
+    box-shadow: 0 0 11px #fff, 0 0 22px #fff;
+}
+
+
+#soundBtn.glow {
+    animation: glow-animation 1s infinite alternate;
+}
+
+@keyframes glow-animation {
+    from {
+        box-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 1px #fff;
+    }
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 1px #fff, 0 0 3px #fff, 0 0 2px #fff;
+    }
+}  
+
+.weather-widget {
+  position: absolute;
+  bottom: 350px;
+  right: 20px;
+  z-index: 9999;
+  cursor: grab;
+
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 2px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+
+  color: white;
+  font-family: 'LT Binary Neue', sans-serif;
+  text-align: center;
+  width: 120px;
+  font-size: 0.6rem;
+  user-select: none;
+}
+
+.weather-widget:active {
+  cursor: grabbing;
+}
+
+
+
+.weather-desc {
+  font-size: 0.6rem;
+  color: #ddd;
+}
+
+.weather-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px; /* spacing between icon & temp */
+}
+
+.weather-icon i {
+  font-size: 20px;
+  color: #0077ff;
+}
+
+.weather-temp {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div class="hero">
+   <!-- ⏰ Floating Clock Widget -->
+
+  <div class="clock-container">
+      <div class="clock">
+          <div class="date text-lg"></div>
+          <div class="time text-xl md:text-xl">
+              <span class="hours digit"></span>
+              <span class="colon">:</span>
+              <span class="minutes digit"></span>
+              <span class="colon">:</span>
+              <span class="seconds digit"></span>
+              <span class="ampm"></span>
+          </div>
+      </div>
+  </div>
+<!-- Weather -->
+<div class="weather-widget">
+  <div class="weather-location"></div>
+  <div class="weather-row">
+    <div class="weather-icon"></div>
+    <div class="weather-temp"></div>
+  </div>
+  <div class="weather-desc"></div>
+</div>
+ 
+
+
+    <div class="load">
+
+      <div class="absolute hv-center">
+        <div class="loading">
+          <span style="--i: 0">D</span>
+          <span style="--i: 1">E</span>
+          <span style="--i: 2">S</span>
+          <span style="--i: 3">I</span>
+          <span style="--i: 4">G</span>
+          <span style="--i: 5">N</span>
+          <span style="--i: 6">E</span>
+          <span style="--i: 7">R</span>   
+        </div>
+      </div>
+    
+
+    <div class="load2">
+      <div class="absolute2 hv-center2">
+        <div class="loading">
+          <span style="--i: 0">D</span>
+          <span style="--i: 1">E</span>
+          <span style="--i: 2">V</span>
+          <span style="--i: 3">E</span>
+          <span style="--i: 4">L</span>
+          <span style="--i: 5">O</span>
+          <span style="--i: 6">P</span>
+          <span style="--i: 7">E</span>   
+          <span style="--i: 8">R</span>   
+        </div>
+      </div>
+    </div>
+
+    <div class="myneonks" id="rain"></div>
+    <img src="kss.png" id="myneon"></img>
+  </div>
+</div>
+  </div>
+</div>
+ 
+
+<!-- 🎛 Control Button -->
+<button id="soundBtn"><i class="fas fa-volume-up"></i></button>
+
+<!-- 🔊 Sound -->
+<audio id="fireSound" src="fire.mp3" loop></audio>
+
+<!-- 🔓 Unlock Bar -->
+<div class="unlock">
+  <div id="sliderTrack">
+    <div id="sliderBtn"></div>
+    <span id="sliderText">Slide to Unlock</span>
+  </div>
+</div>
+
+<script>
+const slider = document.getElementById("sliderBtn");
+const track = document.getElementById("sliderTrack");
+
+let isDragging = false;
+let startX = 0, currentX = 0;
+
+function drag(e) {
+  if (!isDragging) return;
+  currentX = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+  if (currentX < 0) currentX = 0;
+  if (currentX > track.offsetWidth - slider.offsetWidth) {
+    currentX = track.offsetWidth - slider.offsetWidth;
+  }
+  slider.style.left = currentX + "px";
+}
+
+function stopDrag() {
+  if (!isDragging) return;
+  isDragging = false;
+
+  if (currentX >= track.offsetWidth - slider.offsetWidth - 10) {
+    // ✅ Slide completed → Redirect
+    window.location.href = "https://dev.suresh.app";
+  } else {
+    // ❌ Reset back
+    slider.style.left = "0px";
+  }
+}
+
+// Mouse
+slider.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX - slider.offsetLeft;
+});
+document.addEventListener("mousemove", drag);
+document.addEventListener("mouseup", stopDrag);
+
+// Touch
+slider.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX - slider.offsetLeft;
+}, { passive: true });
+document.addEventListener("touchmove", drag, { passive: false });
+document.addEventListener("touchend", stopDrag);
+</script>
+
+<script  src="time.js"></script>
+
+</body>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js'></script>
+
+<script  src="rain.js"></script>
+
+
+
+</html>
