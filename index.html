@@ -88,6 +88,26 @@
 
 
 
+.thunder {
+  animation: thunderFlash 2.5s infinite;
+}
+
+@keyframes thunderFlash {
+  0%   { opacity: 1; }
+  10%  { opacity: 1; }
+  15%  { opacity: 1; }
+  20%  { opacity: 0.8; }
+  22%  { opacity: 1; }
+  25%  { opacity: 0.9; } 
+   27% { opacity: 1; }
+28% { opacity: 1; }
+37% { opacity: 1; }
+50% { opacity: 1; }
+51% { opacity: 0.6; }
+52% { opacity: 1; }
+60% { opacity: 1; }
+  100% { opacity: 1; }
+}
 .myneonks{
 
     justify-content: center;
@@ -188,7 +208,7 @@ animation: float 6s ease-in-out infinite;
 }
 
 .hv-center {
-  top: 90%;
+  top: 70%;
   left: 40%;
   transform: translate(-50%, -50%);
 }
@@ -215,8 +235,8 @@ font-family: 'LT Binary Neue', sans-serif;
 }
 
 .hv-center2 {
-  top: 93%;
-  left: 80%;
+  top: 65%;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 
@@ -244,25 +264,26 @@ font-family: 'LT Binary Neue', sans-serif;
 
 
 
+
     /* Center unlock bar */
     .unlock {
       position: absolute;
-      bottom: 120px;
+      bottom: 90px;
       left: 50%;
       transform: translateX(-50%);
-      width: 69%;
+      width: 75%;
       max-width: 400px;
 
     }
 
     #sliderTrack {
       width: 100%;
-      height: 50px;
+      height: 60px;
 
       background: rgba(255, 255, 255, 0.05);
 
-border: 1px solid white;
-	border-radius: 30px;
+border: 1px solid #dedede;
+	border-radius: 10px;
       position: relative;
       overflow: hidden;
 	backdrop-filter: blur(15px);
@@ -270,9 +291,9 @@ border: 1px solid white;
     }
 
     #sliderBtn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      border-radius: 20%;
    position: absolute;
       left: 0;
       top: 0;
@@ -441,6 +462,7 @@ color: yellow;
 
 </head>
 <body>
+
 <script>
         document.body.addEventListener('touchmove', function(event) {
             event.preventDefault();
