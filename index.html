@@ -181,7 +181,7 @@ animation: float 6s ease-in-out infinite;
 }
 
 .hv-center {
-  top: 70%;
+  top: 80%;
   left: 40%;
   transform: translate(-50%, -50%);
 }
@@ -197,6 +197,7 @@ color: white;
 font-family: 'LT Binary Neue', sans-serif;
                                                                     font-family: 'LT Binary Neue Round', sans-serif;
 
+
                                                 
                                                 
 }
@@ -205,12 +206,14 @@ font-family: 'LT Binary Neue', sans-serif;
 .absolute2 {
   position: absolute;
     width: 100%;
+
 }
 
 .hv-center2 {
-  top: 65%;
+  top: 75%;
   left: 70%;
   transform: translate(-50%, -50%);
+
 }
 
 .load2 {
@@ -239,59 +242,80 @@ font-family: 'LT Binary Neue', sans-serif;
 
 
     /* Center unlock bar */
-    .unlock {
-      position: absolute;
-      bottom: 95px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 75%;
-      max-width: 400px;
+    /* Wrapper keeps unlock bar pinned to bottom center */
+.unlock {
+  position: absolute;
+  bottom: 5%;         /* responsive, works across browsers */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  z-index: 9999;      /* stays on top */
+  display: flex;
+  justify-content: center;
+}
 
-    }
+/* Track aligned properly inside */
+#sliderTrack {
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+}
+#sliderBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  background: #fee800;
+  box-shadow: 0 0 5px #fee800, 0 0 15px #fee800, 0 0 30px #fee800,
+              0 0 60px #fee800;
+  transition: left 0.2s ease;
+  touch-action: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    #sliderTrack {
-      width: 100%;
-      height: 60px;
+#sliderBtn i {
+  font-size: 26px;
+  color: #121212;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-      background: rgba(255, 255, 255, 0.05);
+#sliderBtn i.fade-out {
+  opacity: 0;
+  transform: scale(0.6);
+}
 
-border: 1px solid #dedede;
-	border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-	backdrop-filter: blur(15px);
+#sliderBtn i.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
 
-    }
-
-    #sliderBtn {
-      width: 60px;
-      height: 60px;
-      border-radius: 20%;
-   position: absolute;
-      left: 0;
-      top: 0;
-      cursor: pointer;
-
-background: #fee800;
-	box-shadow: 0 0 5px #fee800, 0 0 15px #fee800, 0 0 30px #fee800,
-		0 0 60px #fee800;
-      transition: left 0.2s ease;
-      touch-action: none; /* important for mobile swipe */
-    }
-
-    #sliderText {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      
-transform: translate(-50%,-50%);
-      color: #fee800;
-      font-size: 18px;
-      font-family: 'Poppins', sans-serif;
-
-      pointer-events: none;
-      white-space: nowrap;
-    }		
+#sliderText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fee800;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.4s ease;  /* 👈 smooth fade */
+}
+#sliderText.fade-out {
+  opacity: 0;
+}
 
 @keyframes neonGlow {
   from {
@@ -343,7 +367,7 @@ margin-bottom: -10px;
 
 #soundBtn {
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     left: 20px;
          	
     padding: 5px 8px;
@@ -533,7 +557,9 @@ color: yellow;
 <!-- 🔓 Unlock Bar -->
 <div class="unlock">
   <div id="sliderTrack">
-    <div id="sliderBtn"></div>
+<div id="sliderBtn">
+  <i class="fas fa-lock"></i> <!-- 🔒 Starts locked -->
+</div>
     <span id="sliderText">Slide to Unlock</span>
   </div>
 </div>
@@ -560,13 +586,34 @@ function stopDrag() {
   isDragging = false;
 
   if (currentX >= track.offsetWidth - slider.offsetWidth - 10) {
-    // ✅ Slide completed → Redirect
-    window.location.href = "https://dev.suresh.app";
+    const icon = slider.querySelector("i");
+    const text = document.getElementById("sliderText");
+
+    // 1. Fade out lock
+    icon.classList.add("fade-out");
+
+    setTimeout(() => {
+      // 2. Switch to unlock + fade in
+      icon.classList.remove("fa-lock", "fade-out");
+      icon.classList.add("fa-unlock", "fade-in");
+
+      // 3. Fade out "Slide to Unlock"
+      text.classList.add("fade-out");
+
+      // 4. Add green glow
+      slider.style.boxShadow = "0 0 15px #00ff00, 0 0 40px #00ff00";
+
+      // 5. Redirect smoothly after animation
+      setTimeout(() => {
+        window.location.href = "https://dev.suresh.app";
+      }, 700);
+    }, 300); // wait for fade-out
   } else {
     // ❌ Reset back
     slider.style.left = "0px";
   }
 }
+
 
 // Mouse
 slider.addEventListener("mousedown", (e) => {
