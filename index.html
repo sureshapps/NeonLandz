@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title> Landing Page</title>
+  <title>loading•sureshks</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -550,11 +550,12 @@ color: yellow;
 </div>
  
 
-<!-- 🎛 Control Button -->
+<audio id="fireSound" autoplay muted loop playsinline>
+  <source src="https://assets.codepen.io/7558/cinematic-02.mp3" type="audio/mpeg">
+</audio>
 <button id="soundBtn"><i class="fas fa-volume-up"></i></button>
 
-<!-- 🔊 Sound -->
-<audio id="fireSound" src="fireSound.mp3" loop></audio>
+
 
 <!-- 🔓 Unlock Bar -->
 <div class="unlock">
@@ -615,14 +616,7 @@ function stopDrag() {
     slider.style.left = "0px";
   }
 }
-	
 
-<div class="audio-enable">
-<audio id="backgroundMusic" loop preload="auto">
-  <source src="https://assets.codepen.io/7558/cinematic-02.mp3" type="audio/mpeg">
-</audio></div>
-<!-- partial -->
-  <script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js'></script>
 
 // Mouse
 slider.addEventListener("mousedown", (e) => {
@@ -718,7 +712,7 @@ document.addEventListener("touchend", stopDrag);
        font-family: 'Fira Code', monospace;
      text-transform: uppercase;
 padding: 8px 20px;
-    border-radius: 8px;
+    border-radius: 8px; no
     backdrop-filter: blur(10px);
     cursor: pointer;
     transition: 0.3s;
