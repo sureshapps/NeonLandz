@@ -44,6 +44,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap);
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
 
     body {
       margin: 0;
@@ -634,6 +636,130 @@ document.addEventListener("touchend", stopDrag);
 
 <script  src="time.js"></script>
 
+<!-- 🌐 Neon Cookie Popup -->
+
+<div class="cookie-popup" id="cookiePopup">
+<h4>WE VALUE YOUR PRIVACY</h4>
+  <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. </p>
+  <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<style>
+  /* === Neon Cookie Popup === */
+  .cookie-popup {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+       font-family: 'Fira Code', monospace;
+    padding: 20px 30px;
+    width: 80%;
+
+   background: #ff00c8;
+    border: 0px solid #ff00c8;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 50px #ff00c8,
+        inset  0 0 50px #ff00c8;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+  text-align: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+
+  .cookie-popup.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 8px #fff700, 0 0 16px #fff700, 0 0 24px #fff700;
+    }
+    to {
+      box-shadow: 0 0 20px #fff700, 0 0 40px #fff700, 0 0 60px #fff700;
+    }
+  }
+
+
+  .cookie-popup h4 {
+    margin: 0 0 15px;
+    font-size: 18px;
+ text-transform: uppercase;
+    line-height: 1;
+ color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+  .cookie-popup p {
+    margin: 0 0 15px;
+    font-size: 10px;
+ text-transform: uppercase;
+    line-height: 1;
+ color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+  .cookie-popup button {
+    background: #fff708;
+    border: 1px solid #fff700;
+       font-family: 'Fira Code', monospace;
+     text-transform: uppercase;
+padding: 8px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: 0.3s;
+
+color: #470825;
+    font-size: 14px;
+ font-weight: 600;
+
+
+
+    letter-spacing: 4px;
+
+      box-shadow: 0 0 10px #fff700;
+  }
+
+  .cookie-popup button:hover {
+    background: #2323ff;
+    border: 0px solid #2323ff;    
+color: #f7ff06;
+    text-shadow: 0 0 8px #29ff08;
+    box-shadow: 0 0 4px #2323ff, 0 0 4px #2323ff
+  }
+</style>
+
+<script>
+  // Show cookie popup after 1.5s
+  window.addEventListener("load", () => {
+    // Only show if not already accepted
+    if (localStorage.getItem("cookiesAccepted") !== "true") {
+      setTimeout(() => {
+        document.getElementById("cookiePopup").classList.add("show");
+        document.getElementById("cookiePopup").style.display = "block"; // show popup
+      }, 1500);
+    }
+  });
+
+  function acceptCookies() {
+    document.getElementById("cookiePopup").style.display = "none"; // hide popup
+    localStorage.setItem("cookiesAccepted", "true");
+  }
+
+  // Hide immediately if already accepted
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    window.addEventListener("load", () => {
+      document.getElementById("cookiePopup").style.display = "none"; // keep hidden
+    });
+  }
+</script>
 </body>
 
   <script src="https://cdn.tailwindcss.com"></script>
